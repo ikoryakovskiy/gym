@@ -77,9 +77,6 @@ class Env(object):
     # Do not override
     _owns_render = True
 
-    def set_test(self, test=False):
-        self._set_test(test)
-
     def step(self, action):
         """Run one timestep of the environment's dynamics. When end of
         episode is reached, you are responsible for calling `reset()`
@@ -98,13 +95,13 @@ class Env(object):
         """
         return self._step(action)
 
-    def reset(self):
+    def reset(self, **kwargs):
         """Resets the state of the environment and returns an initial observation.
 
         Returns: observation (object): the initial observation of the
             space.
         """
-        return self._reset()
+        return self._reset(**kwargs)
 
     def render(self, mode='human', close=False):
         """Renders the environment.
