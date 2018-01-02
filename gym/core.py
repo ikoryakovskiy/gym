@@ -77,6 +77,9 @@ class Env(object):
     # Do not override
     _owns_render = True
 
+    def set_test(self, test=False):
+        self._set_test(test)
+
     def step(self, action):
         """Run one timestep of the environment's dynamics. When end of
         episode is reached, you are responsible for calling `reset()`
