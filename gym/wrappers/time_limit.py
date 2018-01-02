@@ -40,6 +40,7 @@ class TimeLimit(Wrapper):
             if self.metadata.get('semantics.autoreset'):
                 _ = self.reset() # automatically reset the env
             done = True
+            info += "   timeout"
 
         return observation, reward, done, info
 
